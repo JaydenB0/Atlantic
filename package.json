@@ -1,58 +1,12 @@
 {
-  "name": "atlantic",
-  "version": "1.0.0",
-  "description": "Peer to Peer File Sharing",
-  "main": "server.js",
-  "scripts": {
-    "test": "jest",
-    "coverage": "jest --coverage",
-    "buildDev": "rm -rf dist && webpack --mode development --config webpack.server.config.js && webpack --mode development --config webpack.dev.config.js",
-    "buildProd": "rm -rf dist && webpack --mode production --config webpack.server.config.js && webpack --mode production --config webpack.prod.config.js",
-    "start": "npm run buildDev && node ./dist/server.js"
-  },
-  "jest": {
-    "moduleNameMapper": {
-      "\\.(css|less)$": "<rootDir>/__mocks__/styleMock.js",
-      "\\.(gif|ttf|eot|svg)$": "<rootDir>/__mocks__/fileMock.js"
-    }
-  },
-  "keywords": [
-    "p2p",
-    "filesharing"
-  ],
-  "author": "Jayden Bulexa",
-  "license": "ISC",
-  "dependencies": {
-    "express": "^4.17.1"
-  },
-  "devDependencies": {
-    "@babel/core": "^7.9.0",
-    "@babel/preset-env": "^7.9.0",
-    "babel-eslint": "^10.1.0",
-    "babel-loader": "^8.1.0",
-    "css-loader": "^3.4.2",
-    "eslint": "^6.8.0",
-    "eslint-loader": "^4.0.0",
-    "eslint-plugin-import": "^2.20.2",
-    "eslint-plugin-node": "^11.1.0",
-    "eslint-plugin-promise": "^4.2.1",
-    "eslint-plugin-react": "^7.19.0",
-    "eslint-plugin-standard": "^4.0.1",
-    "file-loader": "^6.0.0",
-    "html-loader": "^1.1.0",
-    "html-webpack-plugin": "^4.0.4",
-    "jest": "^25.2.7",
-    "mini-css-extract-plugin": "^0.9.0",
-    "nodemon": "^2.0.2",
-    "optimize-css-assets-webpack-plugin": "^5.0.3",
-    "peer": "^0.5.2",
-    "style-loader": "^1.1.3",
-    "uglifyjs-webpack-plugin": "^2.2.0",
-    "url-loader": "^4.0.0",
-    "webpack": "^4.42.1",
-    "webpack-cli": "^3.3.11",
-    "webpack-dev-middleware": "^3.7.2",
-    "webpack-hot-middleware": "^2.25.0",
-    "webpack-node-externals": "^1.7.2"
-  }
+    "name": "atlantic",
+    "scripts": {
+        "test": "jest",
+        "coverage": "jest --coverage"
+    },
+    "workspaces":[
+        "client",
+        "server"
+    ],
+    "private": true
 }

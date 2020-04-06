@@ -1,9 +1,20 @@
 version: "3.7"
 services:
-    app:
+    server:
+        image: atlantic # add your docker username in front if you want to host it.
         build: .
         volumes:
-            - .:/usr/src/app
+            data:
+                source: dataVolume
+                dest: /wherever
         ports:
-            - "8080:8080"
-        command: "npm start"
+            - "80:80"
+        command: yarn start
+    db:
+        image: mongo:latest # ?
+        networks:
+            database:
+                aliases: mongodb
+
+networks:
+    database:

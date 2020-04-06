@@ -3,18 +3,18 @@ services:
     server:
         image: atlantic # add your docker username in front if you want to host it.
         build: .
-        volumes:
-            data:
-                source: dataVolume
-                dest: /wherever
+#        volumes:
+#            data:
+#                source: dataVolume
+#                dest: /wherever
         ports:
             - "80:80"
         command: yarn start
-    db:
-        image: mongo:latest # ?
-        networks:
-            database:
-                aliases: mongodb
+#    db:
+#        image: mongo:latest # ?
+#        networks:
+#            database:
+#                aliases: mongodb
 
-networks:
-    database:
+#networks:
+#    database:

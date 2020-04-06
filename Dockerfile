@@ -2,7 +2,7 @@
 FROM node:lts as client-builder
 WORKDIR /build
 COPY package.json package.json
-COPY package.lock.json package.lock.json
+COPY package-lock.json package-lock.json
 COPY yarn.lock yarn.lock
 COPY client client
  
@@ -18,7 +18,7 @@ FROM node:lts as server-builder
 
 WORKDIR /build
 COPY package.json package.json
-COPY package.lock.json package.lock.json
+COPY package-lock.json package-lock.json
 COPY yarn.lock yarn.lock
 COPY . .
 
@@ -40,15 +40,15 @@ COPY --from=server-builder /build/server/build server/build
 
 # Copy Global configs
 COPY package.json package.json
-COPY package.lock.json package.lock.json
+COPY package-lock.json package-lock.json
 COPY yarn.lock yarn.lock
 # Copy Client configs
 COPY client/package.json client/package.json
-COPY client/package.lock.json client/package.lock.json
+COPY client/package-lock.json client/package-lock.json
 COPY client/yarn.lock client/yarn.lock
 # Copy Server configs
 COPY server/package.json server/package.json
-COPY server/package.lock.json server/package.lock.json
+COPY server/package-lock.json server/package-lock.json
 COPY server/yarn.lock server/yarn.lock
 
 # install

@@ -8,8 +8,8 @@
     "coverage": "jest --coverage",
     "build:dev": "webpack --mode development --config config/webpack.config.dev.js",
     "build:prod": "webpack --mode production --config config/webpack.config.prod.js",
-    "watch": "webpack --config config/webpack.dev.config.js --watch",
-    "start": "npm run buildDev && node ./dist/server.js"
+    "watch": "webpack --config config/webpack.config.dev.js --watch",
+    "start": "npm run build:dev && node ./dist/server.js"
   },
   "jest": {
     "moduleNameMapper": {

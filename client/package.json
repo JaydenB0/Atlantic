@@ -23,7 +23,7 @@
   "author": "Jayden Bulexa",
   "license": "ISC",
   "dependencies": {
-    "express": "^4.17.1",
+    "express": "^4.17.3",
     "webpack-merge": "^4.2.2"
   },
   "devDependencies": {
